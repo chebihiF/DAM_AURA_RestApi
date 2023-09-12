@@ -8,6 +8,7 @@
 import Foundation
 
 final class GistsViewModel : ObservableObject {
+    
     init()
     {
         DataService.shared.fetchGists()
