@@ -11,7 +11,15 @@ class DataService {
     static let shared = DataService()
     fileprivate let baseUrlString = "https://api.github.com" // base url
     
-    func fetchGists(completion: @escaping (Result<Any,Error>) -> Void ){
+    
+    /*
+     En SwiftUI, "@escaping completion" signifie qu'une fonction prend un paramètre appelé "completion"
+     qui peut être stockée et exécutée ultérieurement, Cela permet généralement de gérer des opérations asynchrones,
+     telles que des appels réseau.
+     Result<[Gist],Error> : au cas de .success => [Gist], au cas d'erreur : .failure => Error
+     */
+    
+    func fetchGists(completion: @escaping (Result<[Gist],Error>) -> Void ){
         
         var componentURL = URLComponents()
         componentURL.scheme = "https"
@@ -38,9 +46,12 @@ class DataService {
             }
             
             do {
-                // try to convert data to JSON format
-                let json = try JSONSerialization.jsonObject(with: validData, options: [])
-                completion(.success(json))
+            
+                
+                let gists = try JSONDecoder().decode([Gist].self, from: validData)
+                
+                completion(.success(gists))
+                
             }catch let serializationError {
                 completion(.failure(serializationError))
             }

@@ -13,6 +13,7 @@
 		6D21BDC02AB0923D00D6D686 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D21BDBF2AB0923D00D6D686 /* Preview Assets.xcassets */; };
 		6D21BDC72AB0927900D6D686 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D21BDC62AB0927900D6D686 /* DataService.swift */; };
 		6D21BDCB2AB096AE00D6D686 /* GistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D21BDCA2AB096AE00D6D686 /* GistsViewModel.swift */; };
+		6D21BDCD2AB0AAE100D6D686 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D21BDCC2AB0AAE100D6D686 /* Gist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		6D21BDBF2AB0923D00D6D686 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6D21BDC62AB0927900D6D686 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		6D21BDCA2AB096AE00D6D686 /* GistsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsViewModel.swift; sourceTree = "<group>"; };
+		6D21BDCC2AB0AAE100D6D686 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				6D21BDBE2AB0923D00D6D686 /* Preview Content */,
 				6D21BDC62AB0927900D6D686 /* DataService.swift */,
 				6D21BDCA2AB096AE00D6D686 /* GistsViewModel.swift */,
+				6D21BDCC2AB0AAE100D6D686 /* Gist.swift */,
 			);
 			path = RestApi;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D21BDCD2AB0AAE100D6D686 /* Gist.swift in Sources */,
 				6D21BDC72AB0927900D6D686 /* DataService.swift in Sources */,
 				6D21BDCB2AB096AE00D6D686 /* GistsViewModel.swift in Sources */,
 				6D21BDBB2AB0923D00D6D686 /* ContentView.swift in Sources */,
