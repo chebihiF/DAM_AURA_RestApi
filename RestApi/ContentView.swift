@@ -9,15 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var viewModel: GistsViewModel
+    @ObservedObject var viewModel: GistsViewModel
     
     var body: some View {
         
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text(viewModel.node_id)
+            // Formulair : isPublic, description, ...
+            Button(action: {
+                viewModel.createGist(gist: Gist(isPublic: true, description: "test", files: ["text_file.txt": File(content: "Hello World")]))
+            }){
+                Text("Save Gist")
+            }
+            
+            Button(action: {
+                viewModel.gists()
+            }){
+                Text("Show Gists")
+            }
+            
+            if (!viewModel.listGist.isEmpty){
+                List{
+                    ForEach(viewModel.listGist){ gist in
+                        Text(gist.description)
+                    }
+                }
+                
+            }
+            
+            Spacer()
         }
         .padding()
     }

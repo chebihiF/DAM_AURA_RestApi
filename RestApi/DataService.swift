@@ -7,11 +7,10 @@
 
 import Foundation
 
+// implement CRUD operations
+
 class DataService {
     static let shared = DataService()
-    fileprivate let baseUrlString = "https://api.github.com" // base url
-    
-    
     /*
      En SwiftUI, "@escaping completion" signifie qu'une fonction prend un paramètre appelé "completion"
      qui peut être stockée et exécutée ultérieurement, Cela permet généralement de gérer des opérations asynchrones,
@@ -110,7 +109,7 @@ class DataService {
         }.resume()
     }
     
-    //PUT
+    // PUT
     func updateGist(id: String, completion: @escaping (Result<Any,Error>) -> Void){
         let updateComponent = createURLComponents(path: "/gists/\(id)")
         // operator similar to IF codition (example : if validURL = componentURL.url is invalid the else block invoked)
@@ -160,8 +159,8 @@ class DataService {
         
     }
     
-    //DELETE
-    func deleteGist(id: String, star:Bool, completion: @escaping (Result<Any,Error>) -> Void){
+    // DELETE
+    func deleteGist(id: String, completion: @escaping (Result<Any,Error>) -> Void){
         let deleteComponent = createURLComponents(path: "/gists/\(id)")
         // operator similar to IF codition (example : if validURL = componentURL.url is invalid the else block invoked)
         guard let validURL = deleteComponent.url else {
@@ -199,6 +198,7 @@ class DataService {
         
     }
     
+    // Generate auth credentials
     func createAuthCredentials() -> String {
         let authString = "TOKEN_API"
         var authStringBase64 = ""

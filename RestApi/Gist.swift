@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Gist: Encodable {
+struct Gist: Encodable, Identifiable {
     
     var id: String?
     var isPublic: Bool
